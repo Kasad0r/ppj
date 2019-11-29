@@ -35,7 +35,6 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public List<String> getDates(String data) {
-
         return Arrays.stream(data.split("\n")).map(this::parseDate).collect(Collectors.toList());
     }
 
@@ -71,7 +70,7 @@ public class LogServiceImpl implements LogService {
             wiadomosc.setRok(localDateTime.getYear());
             wiadomosc.setIp(parseIp(s));
             wiadomosc.setTekst(parseWiadomosc(s).trim());
-            wiadomosc.setUser(s.substring(s.indexOf('-')+1, s.indexOf('(')).trim());
+            wiadomosc.setUser(s.substring(s.indexOf('-') + 1, s.indexOf('(')).trim());
             wiadomoscList.add(wiadomosc);
         }
         return wiadomoscList;
