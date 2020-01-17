@@ -11,7 +11,7 @@ public class Osoba {
 
     @Override
     public String toString() {
-        return "Osoba{" +
+        return "Person{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +

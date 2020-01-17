@@ -16,13 +16,13 @@ public class Main {
         number.setValue(112);
         number.showValue();
 
-        Osoba osoba = new Osoba();
+        Person osoba = new Person();
 
         osoba.setAge(11);
         osoba.setName("John");
         osoba.setSurname("Valentine");
         System.out.println(osoba);
-        Osoba testConstructor = new Osoba("TEST", "TEST", 11);
+        Person testConstructor = new Person("TEST", "TEST", 11);
         System.out.println(testConstructor);*/
 
 

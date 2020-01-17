@@ -12,6 +12,6 @@ public class Zad2 {
         OsobaService osobaService = new OsobaServiceImpl();
         Osoba osoba = new Osoba("Anton", "Karapuz", 2003, true, (short) 1111);
             osobaService.saveToFile(osoba, Paths.get("Z:\\java\\pjj\\src\\main\\resources"));
-        System.out.println(osobaService.objFromFile("Z:\\java\\pjj\\src\\main\\resources\\test.zad1.Osoba.binary"));
+        System.out.println(osobaService.objFromFile("Z:\\java\\pjj\\src\\main\\resources\\test.zad1.Person.binary"));
     }
 }
