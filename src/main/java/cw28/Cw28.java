@@ -16,6 +16,18 @@ import java.util.stream.Collectors;
 public class Cw28 {
     public static void main(String[] args) {
         zad5();
+        System.out.println("----------------------------------------");
+        System.out.println();
+        zad4();
+        System.out.println("----------------------------------------");
+        System.out.println();
+        zad3();
+        System.out.println("----------------------------------------");
+        System.out.println();
+        zad2();
+        System.out.println("----------------------------------------");
+        System.out.println();
+        zad1();
     }
 
     private final static Pattern ipPattern = Pattern.compile("\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b");
@@ -28,21 +40,19 @@ public class Cw28 {
         System.out.println(matcher.matches());
         matcher = pattern.matcher(t);
         System.out.println(matcher.matches());
-        System.out.println();
-
 
     }
 
     public static void zad4() {
         List<String> zad3Lista = zad3();
         for (String s : zad3Lista) {
-            System.out.println(s + "\t" + (checkIsHexIp(s) != null ? true : false));
+            System.out.print(s + "\t" + (checkIsHexIp(s) != null +"\t    "));
         }
     }
 
     @SneakyThrows
     public static void zad5() {
-        Pattern pattern = Pattern.compile("((\\+)(\\d){1,9}(\\((\\d{0,3}|(\\.))(\\)))\\d{0,9})|(\\d{1,4}((\\s|\\-|_)(\\d{1,4}))*)");
+        Pattern pattern = Pattern.compile("((\\+)(\\d){1,9}(\\((\\d{0,3}|(\\.))(\\)))\\d{0,9})|(\\d{1,4}((\\s|\\-|_)(\\d{1,4}))*)$");
         Scanner scanner = new Scanner(Paths.get("Z:\\java\\pjj\\src\\main\\resources\\telFormat.txt"));
         while (scanner.hasNext()) {
             Matcher matcher = pattern.matcher(scanner.nextLine());
@@ -67,7 +77,6 @@ public class Cw28 {
         if (matcher.matches()) {
             System.out.println(matcher.group(2) + "    DDD");
         }
-        System.out.println();
     }
 
     @SneakyThrows
