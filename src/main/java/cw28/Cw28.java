@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class Cw28 {
     public static void main(String[] args) {
-    zad1();
+        zad5();
     }
 
     private final static Pattern ipPattern = Pattern.compile("\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b");
@@ -39,7 +40,16 @@ public class Cw28 {
         }
     }
 
+    @SneakyThrows
     public static void zad5() {
+        Pattern pattern = Pattern.compile("((\\+)(\\d){1,9}(\\((\\d{0,3}|(\\.))(\\)))\\d{0,9})|(\\d{1,4}((\\s|\\-|_)(\\d{1,4}))*)");
+        Scanner scanner = new Scanner(Paths.get("Z:\\java\\pjj\\src\\main\\resources\\telFormat.txt"));
+        while (scanner.hasNext()) {
+            Matcher matcher = pattern.matcher(scanner.nextLine());
+            while (matcher.find()) {
+                System.out.println(matcher.group());
+            }
+        }
 
     }
 
@@ -51,7 +61,7 @@ public class Cw28 {
 
     public static void zad2() {
         String sb = "ATGTGAACTCCCTAG";
-        Pattern  pattern = Pattern.compile("^(ATG)([AGCT]+)(TAG|TAA|TGA)$");
+        Pattern pattern = Pattern.compile("^(ATG)([AGCT]+)(TAG|TAA|TGA)$");
         Matcher matcher = pattern.matcher(sb);
         System.out.println(matcher.find() ? "Zawiera" : "Nie zawira");
         if (matcher.matches()) {
