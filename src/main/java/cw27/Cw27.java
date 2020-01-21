@@ -12,31 +12,6 @@ import java.util.regex.Pattern;
 public class Cw27 {
     public static void main(String[] args) throws IOException {
 
-        System.out.println("----Zadanie1----");
-        String s = "ATGTGAACTCCCTAG";
-        String t = "ACCTAGGACCCCCCC";
-
-        Pattern pattern = Pattern.compile("[AGCT]*");
-        Matcher matcher = pattern.matcher(s);
-        System.out.println(matcher.matches());
-        matcher = pattern.matcher(t);
-        System.out.println(matcher.matches());
-        System.out.println();
-
-
-        System.out.println("----Zadanie2----");
-
-        String sb = "ATGTGAACTCCCTAG";
-        pattern = Pattern.compile("^(ATG)([AGCT]+)(TAG|TAA|TGA)$");
-        matcher = pattern.matcher(sb);
-        System.out.println(matcher.find() ?"Zawiera":"Nie zawira");
-        if(matcher.matches()){
-            System.out.println(matcher.group(2) + "    DDD");
-        }
-
-
-
-        System.out.println();
 
 
         /* System.out.println("----Zadanie3----");
